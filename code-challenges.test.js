@@ -173,7 +173,6 @@ const getCubed = (arr) => {
   return arr.map((v) => v ** 3).reduce((val, nextVal) => val + nextVal);
 };
 
-
 //--------------------||✅ Final Test Results ✅||------------------------------
 // PASS  ./code-challenges.test.js
 // describePerson
