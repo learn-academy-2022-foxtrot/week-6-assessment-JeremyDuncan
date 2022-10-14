@@ -142,23 +142,51 @@ const getRemOfThree = (arr) => {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // a)🧪 Create a test with expect statements using the variables provided.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+describe("getCubed", () => {
+  it("returns the sum of all the numbers cubed", () => {
+    //=== Provided Test Cases ===
+    const cubeAndSum1 = [2, 3, 4];
+    const cubeAndSum2 = [0, 5, 10];
 
-//---------------------||❌ Initial Test Results ❌||---------------------------
+    //=== Expected Test Results ===
+    expected1 = 99
+    expected2 = 1125
 
-//------------------------------------------------------------------------------
-
-const cubeAndSum1 = [2, 3, 4];
-// Expected output: 99
-const cubeAndSum2 = [0, 5, 10];
-// Expected output: 1125
+    expect(getCubed(cubeAndSum1)).toEqual(expected1);
+    expect(getCubed(cubeAndSum2)).toEqual(expected2);
+  });
+});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // b)👨‍💻 Create the function that makes the test pass.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //************************** Explanation ***************************************
-
+/*  1.  I Map over my array of integers
+    2.  Then I cube the value of each integer and return that into an array of
+        cubed numbers.
+    3.  Then I use Reduce to add the value of each cubed number into one single
+        reduced value, which is the sum of all the cubed numbers.
+*/
 //******************************************************************************
 
-//--------------------||✅ Final Test Results ✅||------------------------------
+const getCubed = (arr) => {
+  return arr.map((v) => v ** 3).reduce((val, nextVal) => val + nextVal);
+};
 
+
+//--------------------||✅ Final Test Results ✅||------------------------------
+// PASS  ./code-challenges.test.js
+// describePerson
+//   ✓ returns an array with a sentence about each person with name capitalized (1 ms)
+// getRemOfThree
+//   ✓ returns an array of only the REMAINDERS of the numbers when divided by 3
+// getCubed
+//   ✓ returns the sum of all the numbers cubed (1 ms)
+
+// Test Suites: 1 passed, 1 total
+// Tests:       3 passed, 3 total
+// Snapshots:   0 total
+// Time:        0.191 s, estimated 1 s
+// Ran all test suites matching /code-challenges.test.js/i.
+// ✨  Done in 0.64s.
 //------------------------------------------------------------------------------
