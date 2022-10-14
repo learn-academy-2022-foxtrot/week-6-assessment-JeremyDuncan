@@ -24,10 +24,15 @@ class BlogPostsController < ApplicationController
     # This utilizes the rails method "all" and assigns all the values that are 
     # stored for the BlogPost model in the @posts variable. This with then be 
     # utlized to display all the data in BlogPost 
+    
     @posts = BlogPost.all
   end
 
   # ---3)
+  # This controller action is used to show the data of 1 single object that is 
+  # stored in BlogPost. This is accomplished by using the rails method "find"
+  # along with the ID of the object
+
   def show
     @post = BlogPost.find(params[:id])
   end
