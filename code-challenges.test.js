@@ -25,7 +25,7 @@
 // a)🧪 Create a test with expect statements using the variables provided.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 describe("describePerson", () => {
-  it("returns a coded message", () => {
+  it("returns an array with a sentence about each person with name capitalized", () => {
     //=== Provided Test Cases ===
     const people = [
       { name: "ford prefect", occupation: "a hitchhiker" },
@@ -42,27 +42,18 @@ describe("describePerson", () => {
   });
 });
 
-const people = [
-  { name: "ford prefect", occupation: "a hitchhiker" },
-  { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
-  { name: "arthur dent", occupation: "a radio employee" },
-];
-// Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is
-// president of the galaxy.", "Arthur Dent is a radio employee."]
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // b)👨‍💻 Create the function that makes the test pass.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //************************** Explanation ***************************************
-/*  1.  I map over my array of objects
+/*  1.  I Map over my array of objects
     2.  Then I use string interpolation and split the value of "name" into an 
         an array of strings (first & last name)
-    3.  Then I map over that array and use slice to make the first letter of 
+    3.  Then I Map over that array and use Slice to make the first letter of 
         each name capital, then add the remaining sliced letters of each name
         back together to make a capital name.
-    4.  I join the array with capital names back into a string.
+    4.  I Join the array with capital names back into a string.
     5.  Finally I add the value of occupation in my interpolated string.
-
 */
 //******************************************************************************
 
@@ -79,7 +70,7 @@ const describePerson = (arr) => {
 //--------------------||✅ Final Test Results ✅||------------------------------
 // PASS  ./code-challenges.test.js
 // describePerson
-//   ✓ returns a coded message (2 ms)
+//   ✓ returns an array with a sentence about each person with name capitalized (1 ms)
 
 // Test Suites: 1 passed, 1 total
 // Tests:       1 passed, 1 total
@@ -97,25 +88,50 @@ const describePerson = (arr) => {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // a)🧪 Create a test with expect statements using the variables provided.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+describe("getRemOfThree", () => {
+  it("returns an array of only the REMAINDERS of the numbers when divided by 3", () => {
+    //=== Provided Test Cases ===
+    const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false];
+    const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true];
 
-//---------------------||❌ Initial Test Results ❌||---------------------------
+    //=== Expected Test Results ===
+    expected1 = [2, 0, -1, 0];
+    expected2 = [2, 1, -1];
 
-//------------------------------------------------------------------------------
-
-const hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false];
-// Expected output: [ 2, 0, -1, 0 ]
-const hodgepodge2 = [5, "Hola", 43, -34, "greetings", true];
-// Expected output: [ 2, 1, -1 ]
+    expect(getRemOfThree(hodgepodge1)).toEqual(expected1);
+    expect(getRemOfThree(hodgepodge2)).toEqual(expected2);
+  });
+});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // b)👨‍💻 Create the function that makes the test pass.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //************************** Explanation ***************************************
-
+/*  1.  I Filter over my array of mixed data types
+    2.  Then I use the typeof operator to select only the data types that are 
+        numbers
+    3.  Then I Map over that returned Filter array and apply Modulus 3 to 
+        acquire the remainder of the each real number
+*/
 //******************************************************************************
 
-//--------------------||✅ Final Test Results ✅||------------------------------
+const getRemOfThree = (arr) => {
+  return arr.filter((val) => typeof val === "number").map((v) => v % 3);
+};
 
+//--------------------||✅ Final Test Results ✅||------------------------------
+// PASS  ./code-challenges.test.js
+// describePerson
+//   ✓ returns an array with a sentence about each person with name capitalized (1 ms)
+// getRemOfThree
+//   ✓ returns an array of only the REMAINDERS of the numbers when divided by 3
+
+// Test Suites: 1 passed, 1 total
+// Tests:       2 passed, 2 total
+// Snapshots:   0 total
+// Time:        0.185 s
+// Ran all test suites matching /code-challenges.test.js/i.
+// ✨  Done in 0.53s.
 //------------------------------------------------------------------------------
 
 //******************************************************************************
