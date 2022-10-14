@@ -24,7 +24,7 @@ class BlogPostsController < ApplicationController
     # This utilizes the rails method "all" and assigns all the values that are 
     # stored for the BlogPost model in the @posts variable. This with then be 
     # utlized to display all the data in BlogPost 
-    
+
     @posts = BlogPost.all
   end
 
@@ -38,6 +38,9 @@ class BlogPostsController < ApplicationController
   end
 
   # ---4)
+  # This controller action is used to display a form. This does not actually 
+  # create a new object.
+  
   def new
     @post = BlogPost.new
   end
