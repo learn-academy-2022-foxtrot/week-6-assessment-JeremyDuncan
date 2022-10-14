@@ -9,19 +9,21 @@
 # ---1)
 # This is the controller for BlogPosts, which holds the methods that "control"
 # the BlogPosts model. BlogPostsController is a class which is a child of the 
-# ApplicationController class. It holds the controller actions:
+# ApplicationController class. 
 
+# It also holds the controller actions:
+#---------------------------------
 # Create
-
 # Index, Show, New, Edit
-
 # Update
-
 # Destroy
-
+#---------------------------------
 class BlogPostsController < ApplicationController
   def index
     # ---2)
+    # This utilizes the rails method "all" and assigns all the values that are 
+    # stored for the BlogPost model in the @posts variable. This with then be 
+    # utlized to display all the data in BlogPost 
     @posts = BlogPost.all
   end
 
