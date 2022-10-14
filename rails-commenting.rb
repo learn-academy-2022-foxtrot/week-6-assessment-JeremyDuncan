@@ -7,6 +7,18 @@
 # FILE: app/controller/blog_posts_controller.rb
 
 # ---1)
+# This is the controller for BlogPosts, which holds the methods that "control"
+# the BlogPosts model. BlogPostsController is a class which is a child of the 
+# ApplicationController class. It holds the controller actions:
+
+# Create
+
+# Index, Show, New, Edit
+
+# Update
+
+# Destroy
+
 class BlogPostsController < ApplicationController
   def index
     # ---2)
