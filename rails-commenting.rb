@@ -119,10 +119,25 @@ class BlogPostsController < ApplicationController
   # "private" is used to lower the visibility of the method below, and helps to
   # encapsulate the data. This allows more control of the access of the method, 
   # as it can only be called from inside the class where it’s defined.
-  
+
   private
   def blog_post_params
     # ---10)
+    # This is a strong parameter which is utilized with "require" and "permit" 
+    # methods for best security practices. 
+
+      # The "require" method is used to load ":blog_post", which allows the
+      # utilization of all the class and method definitions 
+      # (such as validations)
+    
+      # The "permit" method is used to define the attributes that can be used 
+      # with the params
+
+    # This prevents Action Controller from using parameters for mass 
+    # assignments until they have been specifically permitted. 
+    
+    # This also helps to prevent the accidental updating of model attributes.
+
     params.require(:blog_post).permit(:title, :content)
   end
 end
