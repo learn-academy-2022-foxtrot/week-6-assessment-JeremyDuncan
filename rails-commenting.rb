@@ -53,9 +53,11 @@ class BlogPostsController < ApplicationController
 
     # The rails method "create" is used with the argument private method
     # "blog_post_params"
-    
+
     # if the creation of the object is valid, then redirect to the 
     # blog_post_path
+
+    # if not, then stay on the new page
 
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
@@ -73,7 +75,7 @@ class BlogPostsController < ApplicationController
 
     # This does not actually change the Object data, but helps facilitate the 
     # process by holding the data that will be used to change it in a later step 
-    # with  different method called "update".
+    # with a different method called "update".
 
     @post = BlogPost.find(params[:id])
   end
@@ -81,6 +83,18 @@ class BlogPostsController < ApplicationController
   def update
     @post = BlogPost.find(params[:id])
     # ---7)
+    # This applies the rails method "update" with the "blog_post_params" method 
+    # as an argument. 
+    
+    # This basically allows the user to update the data of the object they 
+    # provided on the edit form which was created with the help of the "edit"
+    # method on line 68 (question #6).
+
+    # if the update of the object is valid, then redirect to the 
+    # blog_post_path
+
+    # if not, then stay on the edit page
+    
     @post.update(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
