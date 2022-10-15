@@ -116,6 +116,10 @@ class BlogPostsController < ApplicationController
   end
 
   # ---9)
+  # "private" is used to lower the visibility of the method below, and helps to
+  # encapsulate the data. This allows more control of the access of the method, 
+  # as it can only be called from inside the class where it’s defined.
+  
   private
   def blog_post_params
     # ---10)
