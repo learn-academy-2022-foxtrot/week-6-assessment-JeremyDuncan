@@ -94,7 +94,7 @@ class BlogPostsController < ApplicationController
     # blog_post_path
 
     # if not, then stay on the edit page
-    
+
     @post.update(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -105,6 +105,12 @@ class BlogPostsController < ApplicationController
     @post = BlogPost.find(params[:id])
     if @post.destroy
       # ---8)
+      # This method "destroy" does just that the the selected object in BlogPost.
+
+      # if "destroy" is called, then redirect to the index page showing all the 
+      # blog posts. (which would show all your posts that were created sans the
+      # newly destroyed post)
+
       redirect_to blog_posts_path
     end
   end
