@@ -1,7 +1,8 @@
 # ASSESSMENT 6: Rails Commenting Challenge
 
 # Add comments to the Rails Blog Post Challenge
-# Explain the purpose and functionality of the code directly below the 10 comment tags
+# Explain the purpose and functionality of the code directly below the 10 
+# comment tags
 
 
 # FILE: app/controller/blog_posts_controller.rb
@@ -22,7 +23,7 @@ class BlogPostsController < ApplicationController
   def index
     # ---2)
     # This utilizes the rails method "all" and assigns all the values that are 
-    # stored for the BlogPost model in the @posts variable. This with then be 
+    # stored for the BlogPost model in the @posts variable. This will then be 
     # utlized to display all the data in BlogPost 
 
     @posts = BlogPost.all
@@ -40,13 +41,22 @@ class BlogPostsController < ApplicationController
   # ---4)
   # This controller action is used to display a form. This does not actually 
   # create a new object.
-  
+
   def new
     @post = BlogPost.new
   end
 
   def create
     # ---5)
+    # This controller action is used to create a new object that was submitted 
+    # from a form created by the controller action "new". 
+
+    # The rails method "create" is used with the argument private method
+    # "blog_post_params"
+    
+    # if the creation of the object is valid, then redirect to the 
+    # blog_post_path
+
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -55,6 +65,16 @@ class BlogPostsController < ApplicationController
 
   def edit
     # ---6)
+    # This assigns the value of the given object from BlogPost depending on the 
+    # ID provided in params to @post. 
+
+    # This is used to then display a page which displays the data of the object 
+    # in a Form. This is then used to "edit" that data. 
+
+    # This does not actually change the Object data, but helps facilitate the 
+    # process by holding the data that will be used to change it in a later step 
+    # with  different method called "update".
+
     @post = BlogPost.find(params[:id])
   end
 
