@@ -4,20 +4,56 @@
 
   First, without external resources. Challenge yourself to answer from memory.
 
-  Then, research the question to expand on your answer. Even if you feel you have 
-  answered the question completely on your own, there is always something more to 
-  learn. Write your researched answer in your OWN WORDS.
+  Then, research the question to expand on your answer. Even if you feel you 
+  have answered the question completely on your own, there is always something 
+  more to learn. Write your researched answer in your OWN WORDS.
 </h2>
 
 --------------------------------------------------------------------------------
 <h2>
-  1. As a developer, I am creating a Rails application with a model called Cohort 
-  that has_many students, but OOPS! I forgot to add the foreign key. How can I fix
-  this mistake? What is the name of the foreign key? Would the foreign key be on 
-  the Cohort model or the Student model?
+  1. As a developer, I am creating a Rails application with a model called 
+  Cohort that has_many students, but OOPS! I forgot to add the foreign key. How 
+  can I fix this mistake? What is the name of the foreign key? Would the foreign 
+  key be on the Cohort model or the Student model?
 </h2>
 
 ### Your answer:
+* In order to fix this you would need to add the foreign key "cohort_id" with a 
+data type of "integer" to the Student model. To do this you would need to create
+a migration action in the terminal such as:
+
+terminal
+```bash
+// format  => rails g migration <migration_action_name>
+// example => rails g migration add_foreign_key
+```
+
+* This will create a migration file in your ruby application in db/migrate 
+folder. You would then need to add the migration action you wish to happen in 
+your table, which would be reflected in your model.
+
+* you would declare the method "change" in that file, then a enter the 
+information you want to change in this format bellow:
+
+db/migrate/<RUBY_DATE_TIME_STAMP>_<migration_action_name>.rb
+```ruby
+  def change
+   #<action> <table to change>, <column to add>, <table value>
+    add_column :students, :cohort_id, :integer
+  end
+```
+
+* After that you would want to do migrate your changes in the terminal to take 
+affect:
+
+terminal
+```bash
+rails db:migrate
+```
+
+* Once you do that your changes have taken effect and your model Student will 
+have the foreign key of cohort_id associated with it.
+
 
 ### Researched answer:
 
