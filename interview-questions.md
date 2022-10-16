@@ -8,6 +8,7 @@
   answered the question completely on your own, there is always something more to 
   learn. Write your researched answer in your OWN WORDS.
 </h2>
+
 --------------------------------------------------------------------------------
 <h2>
   1. As a developer, I am creating a Rails application with a model called Cohort 
