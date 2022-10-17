@@ -75,6 +75,26 @@ specific data in the model to apply the routes for.
 ## 3. Name three rails generator commands. What is created by each?
 
 ### Your answer:
+* Three rails generator commands are:
+
+
+
+```bash
+   rails generate model <Model_Name> <column_name>:<column_value> 
+```
+  * This creates a model to be used to for the rails application. 
+
+```bash
+  * rails generate migration <action_name_here>
+```
+  * this migrates the changes in the database that were created in the rails 
+  app. 
+
+```bash  
+  * rails generate resource <Model_Name> <column_name>:<column_value> 
+```
+  * this is an all-in-one command that accomplishes many things such as creating
+   the model, migrations, and setting up the routes.
 
 ### Researched answer:
 
