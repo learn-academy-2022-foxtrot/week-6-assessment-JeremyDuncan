@@ -61,6 +61,13 @@ have the foreign key of cohort_id associated with it.
 ## 2. Which RESTful routes must always be passed params? Why?
 
 ### Your answer:
+* The RESTful routes that must always be passed params are:
+  * Show
+  * Edit
+  * Update
+  * Destroy
+* These RESTful routes must be passed params because they need to know the 
+specific data in the model to apply the routes for.
 
 ### Researched answer:
 
