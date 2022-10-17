@@ -77,8 +77,6 @@ specific data in the model to apply the routes for.
 ### Your answer:
 * Three rails generator commands are:
 
-
-
 ```bash
    rails generate model <Model_Name> <column_name>:<column_value> 
 ```
@@ -106,18 +104,45 @@ specific data in the model to apply the routes for.
 </h2>
 
 ### action: "GET" location: /students
+* index
+  * This would be used to display all of the objects in the table from the 
+  database
+  * This would show all the students
 
 ### action: "POST" location: /students
+* create 
+  * This creates a new object based on the data that was inputted on the form
+  created by the new method.
+  * This would create a new student
 
 ### action: "GET" location: /students/new
+* new
+  * This would be used to display a page with a form which would be used by the
+  to input data to be used by the "create" method to create a new object for
+  your database.
+  * This would show a form for creating a new student 
 
 ### action: "GET" location: /students/2
+* show
+  * This would be used to show a specific object in the database.
+  * This would show the student with :id value of 2
 
 ### action: "GET" location: /students/2/edit
+* edit
+  * This is similar to the "new" method, except this shows a form to be used to 
+  update values in an object.
+  * this would show a form to edit student with :id value of 2
 
 ### action: "PATCH" location: /students/2
+* update
+  * This is similar to the "create" method, except it is updating an object 
+  that has already been created based on the data entered in the edit form.
+  * This would update the values of the student with :id value of 2
 
 ### action: "DELETE" location: /students/2
+* destroy
+  * This deletes the selected object.
+  * This would destroy the student with the :id value of 2
 
 --------------------------------------------------------------------------------
 <h2>
