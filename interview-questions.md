@@ -151,20 +151,59 @@ specific data in the model to apply the routes for.
   more about 
   [user stories](https://www.atlassian.com/agile/project-management/user-stories).
 </h2>
+<br>
 
-1. As a user I can see a title for the application.
-2. As a user I see a button that I can click on called "Add Choice".
-3. As a user when I click on "Add Choice", it creates a window that contains
-   A new button that says "Press for Selection".
-4. As a user when I click on "Add Choice" multiple times to create multiple
-   windows that contain the "Press for Selection" button.
-5. As a user when I click on "Press for Selection", it shows a restaurant name.
-6. As a user when I click on "Press for Selection", it shows a link to the 
-   restaurant.
-7. As a user when I click on the link it shows me the webpage of the restaurant.
-8. As a user when I click on "Press for Selection", it shows a picture of the 
-   genre of food.
-9. As a user when I click on "Press for Selection", it shows a random 
-   restaurant name with associated link, and picture.
-10. As a user I see a button that I can click on called "Reset" that removes all
-   the windows.
+<h3>
+
+  1. As a user I can see a title for the application.
+
+  2. As a user I see a text-area that displays a heading of "To-Do List".
+
+  3. As a user I see a text field with a label "task".
+
+  4. As a user I see a text field with a label "due date".
+
+  5. As a user I see a text field with a label "description".
+
+  6. As a user when I can see a button that says "Add To List".
+
+  7. As a user when I click on the "Add To List" button, it displays the data I 
+     entered in all the text-fields in the "To-Do List" text area.
+
+  8. As a user when I can click on the "Add To List" button multiple times to 
+     add multiple tasks.
+
+  9. As a user when I can see a button that says "Completed"
+
+  10. As a user when I have a task selected, and click on the "Completed" button
+      it removes the task from the "To-Do List" text area.
+
+</h3>
+
+  <!-- Miss-read this section and had to re-do it >.< -->
+  <!-- 
+  1. As a user I can see a title for the application.
+
+  2. As a user I see a button that I can click on called "Add Choice".
+
+  3. As a user when I click on "Add Choice", it creates a window that contains
+    A new button that says "Press for Selection".
+
+  4. As a user when I click on "Add Choice" multiple times to create multiple
+    windows that contain the "Press for Selection" button.
+
+  5. As a user when I click on "Press for Selection", it shows a restaurant name.
+
+  6. As a user when I click on "Press for Selection", it shows a link to the 
+    restaurant.
+
+  7. As a user when I click on the link it shows me the webpage of the restaurant.
+
+  8. As a user when I click on "Press for Selection", it shows a picture of the 
+    genre of food.
+
+  9. As a user when I click on "Press for Selection", it shows a random 
+    restaurant name with associated link, and picture.
+
+  10. As a user I see a button that I can click on called "Reset" that removes all
+      the windows. -->
