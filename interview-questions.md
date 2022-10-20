@@ -56,6 +56,24 @@ have the foreign key of cohort_id associated with it.
 
 
 ### Researched answer:
+* According to: https://scmsantar.com/scmsantar/releases/20111219183956/RAILS_ENV=production/ruby/1.9.1/gems/railties-3.1.3/guides/output/migrations.html
+  * It looks like you could roll back your migration with the command:
+  ```bash
+    rails db:rollback
+  ```
+  * This will effectively roll back a migration 1 step. If you needed to go back more than one step, (lets say 3 migrations worth) you could use the command:
+  ```bash
+    rails db:rollback STEP=3
+  ```
+  * After rolling back, it looks like you would want to enter:
+  ```bash
+    rails db:reset
+  ```
+  * This command drops the database and recreates it with the current scheme.
+  * After that you could recreate the model with the foreign key you forgot to 
+  add, then db:migrate.
+
+
 
 --------------------------------------------------------------------------------
 ## 2. Which RESTful routes must always be passed params? Why?
