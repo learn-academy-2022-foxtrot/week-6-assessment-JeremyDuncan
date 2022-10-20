@@ -88,7 +88,27 @@ have the foreign key of cohort_id associated with it.
 specific data in the model to apply the routes for.
 
 ### Researched answer:
+* According to: https://guides.rubyonrails.org/v3.1/routing.html
+  * The RESTful routes that must have params passed are:
+    * GET
+    * PUT
+    * DELETE
 
+  * They require params since in order to route they need to know the specific 
+    object they are routing to in order to accomplish the task.
+
+RESTfull routes that require params:
+
+----
+
+```mermaid
+graph LR
+verb>HTTP Verb] -->  pth>PATH] -->  act>ACTION]
+	GET --> path1["/path/:id"] --> CA(Show)
+  GET --> path2["/path/:id/edit"] --> CA2(Edit)  
+	HTTP[PUT <br> PATCH <br> ]  --> path3["/path/:id"] --> CA_update(update) 
+	HTTP_delete[DELETE] --> path4["/path/:id"] --> CA_destroy(Destroy) 
+```
 --------------------------------------------------------------------------------
 ## 3. Name three rails generator commands. What is created by each?
 
