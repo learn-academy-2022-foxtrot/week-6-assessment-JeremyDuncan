@@ -133,6 +133,43 @@ verb>HTTP Verb] -->  pth>PATH] -->  act>ACTION]
    the model, migrations, and setting up the routes.
 
 ### Researched answer:
+* According to: https://guides.rubyonrails.org/generators.html
+  * You can actually create custom generators to make your workflow more efficient. 
+  * Rails Generators are built on top of Thor:
+    * According to: https://github.com/rails/thor
+      * Thor is an efficient tool that can be used as an alternative to rake, 
+        builds self documenting command line utilities, and allows seamless
+        file and url access. (end of rabbit hole)
+* According to: https://makandracards.com/makandra/44740-rails-default-generators
+  * Some of the default generators include:
+    * scaffold:
+      * Whats Created: 
+        * model
+        * migration
+        * controller  
+        * entry in routes.rb
+        * views
+        * tests
+    * resource:
+      * Whats Created: 
+        * model
+        * migration
+        * controller  
+        * entry in routes.rb
+        * tests 
+    * model:
+      * Whats Created: 
+        * model
+        * migration
+        * tests 
+    * controller:
+      * Whats Created: 
+        * controller  
+        * entry in routes.rb
+        * tests
+    * migration:
+      * Whats Created: 
+        * migration
 
 --------------------------------------------------------------------------------
 <h2> 
@@ -147,11 +184,26 @@ verb>HTTP Verb] -->  pth>PATH] -->  act>ACTION]
   database
   * This would show all the students
 
+  ```ruby
+  def index 
+    @students = Student.all
+  end
+  ```
+
 ### action: "POST" location: /students
 * create 
   * This creates a new object based on the data that was inputted on the form
   created by the new method.
   * This would create a new student
+
+  ```ruby
+  def create 
+    @student = Student.create(student_params)
+    if @student.valid?
+      redirect_to students_path
+    end
+  end
+  ```
 
 ### action: "GET" location: /students/new
 * new
@@ -160,28 +212,67 @@ verb>HTTP Verb] -->  pth>PATH] -->  act>ACTION]
   your database.
   * This would show a form for creating a new student 
 
+  ```ruby
+  def new
+      @student = Student.new
+  end
+  ```
+
 ### action: "GET" location: /students/2
 * show
   * This would be used to show a specific object in the database.
   * This would show the student with :id value of 2
-
+  
+  ```ruby
+  def show
+      @student = Student.find(params[:id])
+  end
+  ```
 ### action: "GET" location: /students/2/edit
 * edit
   * This is similar to the "new" method, except this shows a form to be used to 
   update values in an object.
   * this would show a form to edit student with :id value of 2
-
+  
+  ```ruby
+  def edit
+      @student = Student.find(params[:id])
+  end
+  ```
 ### action: "PATCH" location: /students/2
 * update
   * This is similar to the "create" method, except it is updating an object 
   that has already been created based on the data entered in the edit form.
   * This would update the values of the student with :id value of 2
-
+  
+  ```ruby
+  def update
+      @student = Student.find(params[:id])
+      @student.update(student_params)
+      
+      if @student.valid?
+          redirect_to student_path(@student)
+      else
+          redirect_to edit_student_path(@student)
+      end
+  end
+  ```
 ### action: "DELETE" location: /students/2
 * destroy
   * This deletes the selected object.
   * This would destroy the student with the :id value of 2
-
+  
+  ```ruby
+  def destroy   
+      @student= Student.find(params[:id])  
+      
+      if @student.destroy
+          redirect_to students_path
+      else
+          redirect_to student_path(@blog)
+      end
+  end
+  ```
 --------------------------------------------------------------------------------
 <h2>
   5. As a developer, you are making an application to manage your to do list. 
