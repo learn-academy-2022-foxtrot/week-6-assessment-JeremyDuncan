@@ -269,7 +269,7 @@ verb>HTTP Verb] -->  pth>PATH] -->  act>ACTION]
       if @student.destroy
           redirect_to students_path
       else
-          redirect_to student_path(@blog)
+          redirect_to student_path(@student)
       end
   end
   ```
